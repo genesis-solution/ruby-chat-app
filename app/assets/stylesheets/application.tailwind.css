@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#messages {
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 2em;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  margin: 0 1em;
+}

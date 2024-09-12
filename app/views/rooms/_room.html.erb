@@ -1,0 +1,32 @@
+
+<div class="container mx-auto my-3 rounded-lg shadow-lg">
+  <div class="flex flex-col"> 
+    <div>
+    <header-component />
+    </div>
+    <div class="flex flex-row my-3 bg-white">
+      <div class="w-2/6 mt-2"> 
+        <room-list-component/>
+      </div>
+      <div class="w-4/6">
+        <div class="flex flex-col justify-between w-full px-5">
+        <div id="<%= dom_id room %>" data-controller="messages" class="flex flex-col mt-2">
+  <%= turbo_stream_from dom_id(room) %>
+  
+  <div id="messages" data-messages-target="container">
+    <% @messages&.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+  
+  <div id="new_message" class="flex items-center m-4">
+    <img src="https://t4.ftcdn.net/jpg/05/89/93/27/360_F_589932782_vQAEAZhHnq1QCGu5ikwrYaQD0Mmurm0N.webp" class="object-cover w-8 h-8 rounded-full" alt="">
+    <%= render "messages/form", room: room %>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

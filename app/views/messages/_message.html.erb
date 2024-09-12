@@ -1,0 +1,10 @@
+<%= turbo_frame_tag dom_id(message) do %>
+  <div class="flex items-center my-3">
+    <div class="w-8 h-8 mr-2 overflow-hidden rounded-full">
+      <img src="https://ui-avatars.com/api/?name=<%= message.user.email.split('@')[0].capitalize %>" class="object-cover w-full h-full" alt="">
+    </div>
+    <div class="text-sm text-gray-700">
+      <%= "#{message.user.email.split('@')[0].capitalize}: #{message.body}" %>
+    </div>
+  </div>
+<% end %>

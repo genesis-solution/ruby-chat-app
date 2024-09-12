@@ -1,0 +1,27 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-50">
+  <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+    <h2 class="mb-6 text-2xl font-bold text-center">Manage Room</h2>
+
+    <%= form_with(model: room, local: true) do |form| %>
+      <% if room.errors.any? %>
+        <div class="p-4 mb-4 text-red-700 bg-red-100 border border-red-400 rounded">
+          <h2 class="text-lg font-semibold"><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+          <ul class="mt-2 list-disc list-inside">
+            <% room.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-4">
+        <%= form.label :name, class: "block mb-2 text-sm font-medium text-gray-700" %>
+        <%= form.text_field :name, class: "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      </div>
+
+      <div>
+        <%= form.submit "Create Room", class: "w-full px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      </div>
+    <% end %>
+  </div>
+</div>
