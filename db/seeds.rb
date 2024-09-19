@@ -11,7 +11,3 @@
 User.create!(email: "thoriq@gmail.com", password: "password", password_confirmation: "password")
 User.create!(email: "ali@gmail.com", password: "password", password_confirmation: "password")
 User.create!(email: "said@gmail.com", password: "password", password_confirmation: "password")
-
-Room.create!(name: "Ruby On Rails");
-Room.create!(name: "Javascript");
-Room.create!(name: "Random");
